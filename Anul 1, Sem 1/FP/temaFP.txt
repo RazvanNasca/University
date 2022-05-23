@@ -1,0 +1,55 @@
+x = [-1,-1,-1]
+v = [-1, 2, -2]
+semn = [0,0,0]
+
+def run():
+    Back(0,3)
+
+def Back(k,n):
+    for i in range(0,n):
+        x[k] = i  #x.append(i)
+        if ok(k):
+            if k == n - 1:
+                s = suma(k)
+                if s + v[x[k]]:
+                    semn[k] = 0
+                    Solutie(k)
+                if  s - v[x[k]]:
+                    semn[k] = 1
+                    Solutie(k)
+            else:
+                if k == 0:
+                    semn[k] = 0
+                else:
+                    semn[k] = 0
+                    Back(k+1,n)
+                    semn[k] = 1
+                    Back(k+1,n)
+
+def ok(k):
+    for i in range(0,k):
+        if x[i] == x[k]:
+            return False
+    return True
+
+def suma(k):
+    s = 0
+    for i in range(0,k):
+        if semn[i] == 0:
+            s += v[x[i]]
+        else:
+            s -= v[x[i]]
+    return s
+
+def Solutie(k):
+    sir = 0
+    for i in range(0,k):
+        if semn[i] > 0:
+            sir += str(semn[i])
+            sir += " "
+        sir += str(v[x[i]])
+
+    print(sir)
+    print("\n")
+
+run()

@@ -1,0 +1,70 @@
+from ui import *
+from teste import *
+
+
+def comanda(v, s):
+    # interfata pentru utilizator
+
+    commands = {
+        "1a": ui_adauga_cheltuiala,
+        "1b": ui_actualizeaza_cheltuiala,
+        "2a": ui_sterge_cheltuieli_ziua,
+        "2b": ui_sterge_cheltuieli_interval,
+        "2c": ui_sterge_cheltuieli_tip,
+        "Search1": ui_cauta_cheltuieli_suma,
+        "Search2": ui_cauta_cheltuieli_zi,
+        "3c": ui_cauta_cheltuieli_tip,
+        "Filter1": ui_raport_suma_tip,
+        "Filter2": raport_suma_maxima,
+        "4c": ui_raport_suma,
+        "4d": raport_sortare,
+        "5a": ui_elimina_cheltuieli_tip,
+        "5b": ui_elimina_cheltuieli_suma,
+        "6": undo
+    }
+    while True:
+        print("")
+        print("Intoduceti un numar din lista de mai jos")
+        print("1a. Adaugare cheltuiala")
+        print("1b. Actualizeaza cheltuiala")
+        print("2a. Stergere cheltuiala din ziua precizata")
+        print("2b. Stergere cheltuieli din interval")
+        print("2c. Stergere cheltuielile de un anumit tip")
+        print("Search1. Afiseaza cheltuielile mai mari decat o suma")
+        print("Search2. Afiseaza cheltuielile inainte de o zi si mai mici decat o suma")
+        print("3c. Afiseaza toate cheltuielile de un anumit tip")
+        print("4a. Afiseaza suma totala pentru un anumit tip")
+        print("4b. Afiseaza ziua in care cheltuiala e maxima")
+        print("4c. Afiseaza cheltuielile care au o suma precizata")
+        print("4d. Afiseaza cheltuielile sortate dupa tip")
+        print("5a. Elimina cheltuielile de un anumit tip")
+        print("5b. Elimina toate cheltuielile mai mici decat o suma")
+        print("6. Undo")
+        print("7. Iesire")
+        print("")
+        cmd = input()
+        if cmd == "7":
+            exit()
+        if cmd in commands:
+            commands[cmd](v,s)
+        else:
+            print("Comanda invalida!")
+
+
+def run():
+    # functia principala
+    # declararea dictionatului de liste de cheltuieli
+
+    v = {1:[], 2:[], 3:[], 4:[], 5:[]}
+    s =[]
+    comanda(v,s)
+
+def run_all_tests():
+    # ruleaza toate testele
+
+    test_validare_suma()
+    test_validare_cheltuiala()
+
+
+run_all_tests()
+run()

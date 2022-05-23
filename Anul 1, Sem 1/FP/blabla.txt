@@ -1,0 +1,31 @@
+ def partition(self, l, left, right, key, reverse , cmp = Student.cmp):
+        pivot = key(l[left])
+        i = left
+        j = right
+        while i != j:
+            if reverse == False:
+                while (cmp(key(l[j]),pivot) == 1 or cmp(key(l[j]),pivot) == 0) and i < j:
+                    j = j - 1
+            else:
+                while (cmp(key(l[j]),pivot) == -1 or cmp(key(l[j]),pivot) == 0) and i < j:
+                    j = j - 1
+        l[i] = l[j]
+        if reverse == False:
+            while (cmp(key(l[i]),pivot) == -1 or cmp(key(l[i]),pivot) == 0) and i < j:
+                i = i + 1
+        else:
+            while (cmp(key(l[j]),pivot) == 1 or cmp(key(l[j]),pivot) == 0) and i < j:
+                i = i + 1
+        l[j] = l[i]
+        l[i] = pivot
+        return i
+
+    def quickSortRec(self, l, left, right, key = lambda x : x, reverse = False):
+
+        pos = self.partition(l, left, right, key = key, reverse = reverse)
+
+        if left < pos - 1:
+            self.quickSortRec(l, left, pos - 1, key = key, reverse = reverse)
+
+        if pos + 1 < right:
+            self.quickSortRec(l, pos + 1, right, key = key, reverse = reverse)

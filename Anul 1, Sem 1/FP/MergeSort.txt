@@ -1,0 +1,68 @@
+def interclasare(sir1, sir2):
+	# sir1, sir2 - liste sortate
+	# returneaza o noua ista sortata care contine elem din cele 2 siruri
+	
+	i = 0
+	j = 0
+	while i < len(sir1) and j < len(sir2):
+		if sir1[i] < sir2[j]:
+			rezultat.append(sir1[i])
+			i += 1
+		else:
+			rezultat.append(sir2[j])
+			j += 1
+
+	while i < len(sir1):
+		rezultat.append(sir1[i])
+		i += 1
+
+	while j < len(sir2):
+		rezultat.append(sir2[j])
+		j += 1
+
+def test():
+#WhiteBox
+	sir1 = [1,2,3,4,6,7]
+	sir2 = [2,3,5,8,9]
+	rez = interclasare(sir1,sir2)
+	assert(rez == [1,2,2,3,34,5,6,7,8,9])
+	assert(interclasare([],[1,2,3]) == [1,2,3])
+	assert(interclasare([6,6],[1,2,3]) == [1,2,3,6,6])
+	assert(interclasare([1,2,3,4],[2]) == [1,2,2,3,4])
+
+test()
+		
+# WhiteBox => ne asiguram ca fiecare linie de cod este executata
+
+def MergeSort(sir, left, right):
+	
+	if left == right or left  == right - 1:
+		return 
+
+	mij = ( left + right ) // 2
+	MergeSort(sir, left, mij)
+	MergeSort(sir, mij+1, right)
+	
+	sir1 = sir[left:mij]
+	sir2 = sir[mij:right]
+	
+	rez = interclasare(sir1,sir2)
+	
+	sir[left:right] = rez  # in loc de for-ul cu care copiem elementele
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	

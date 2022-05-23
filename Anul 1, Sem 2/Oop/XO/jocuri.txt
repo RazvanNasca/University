@@ -1,0 +1,9 @@
+1 3 ------XOO O InDerulare
+2 4 XXOXO-XOOO--XO-- X InDerulare
+5 3 ------XOO O InDerulare
+10 3 XOOXO-XOO X InDerulare
+21 5 X----OO----O---OO-------- X InDerulare
+54 3 XXOXO-XOO O InDerulare
+12 4 XOXOXOXOXXOXO--- O InDerulare
+27 3 XOXOXOXOO X InDerulare
+56 3 XOXOOOXXO X Terminat

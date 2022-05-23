@@ -1,0 +1,70 @@
+TElem Matrice::modifica(int i, int j, TElem e) {
+	
+	if (i < 0 || j < 0 || i >= lin || j >= col)
+		throw exception();
+
+	/// lista vida
+	if (rad == nullptr)
+	{
+		nod* nodnou = new nod;
+		nodnou->coloana = j;
+		nodnou->linie = i;
+		nodnou->drept = nullptr;
+		nodnou->stang = nullptr;
+		nodnou->val = e;
+		rad = nodnou;
+
+		return NULL_TELEMENT;
+	}
+
+	/// cautam elementul in lista
+	nod* curent = rad;
+	while (curent->drept != nullptr || curent->stang != nullptr)
+	{
+		if (curent->linie == i && curent->coloana == j)
+		{
+			int valoare = curent->val;
+			curent->val = e;
+			return valoare;
+		}
+		if (i < curent->linie)
+			curent = curent->stang;
+		else
+			if (i > curent->linie)
+				curent = curent->drept;
+			else
+				if (j < curent->coloana)
+					curent = curent->stang;
+				else
+					curent = curent->drept;
+	}
+
+	/// verificam ultima frunza 
+	if (curent->linie == i && curent->coloana == j)
+	{
+		int valoare = curent->val;
+		curent->val = e;
+		return valoare;
+	}
+
+	/// adaugam un nou nod
+	nod* nodnou = new nod;
+	nodnou->linie = i;
+	nodnou->coloana = j;
+	nodnou->drept = nullptr;
+	nodnou->stang = nullptr;
+	nodnou->val = e;
+
+	if (i < curent->linie)
+		curent->stang = nodnou;
+	else
+		if (i > curent->linie)
+			curent->drept = nodnou;
+		else
+			if (j < curent->coloana)
+				curent->stang = nodnou;
+			else
+				curent->drept = nodnou;
+
+	return NULL_TELEMENT;
+}

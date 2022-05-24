@@ -1,0 +1,9 @@
+﻿a1,Popa Andrei,10,SENIOR
+a2,Ionescu Mihai,7,JUNIOR
+a3,Ionescu Maria,8,JUNIOR
+a4,Acatrinei Mihai,7,JUNIOR
+a5,Pop Mihai,5,JUNIOR
+a6,Marei Mihai,8,JUNIOR
+a7,Vasile Ioan,6,JUNIOR
+a8,Ana Elena,11,SENIOR
+a9,Ioana Ana,9,MEDIUM

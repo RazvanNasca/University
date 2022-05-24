@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:properties id="propertiesPath" location="classpath:server.properties"/>
+
+    <bean name="PROP" id="properties" class="java.util.Properties">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+
+    <bean id="userRepo" class="app.persistence.UserDBRepository">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+
+    <bean id="jocRepo" class="app.persistence.JocDBRepository">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+
+    <bean id="manaRepo" class="app.persistence.ManaDBRepository">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+
+    <bean id="propunereRepo" class="app.persistence.PropunereDBRepository">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+
+    <bean id="rundaRepo" class="app.persistence.RundaDBRepository">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+    
+    <bean id="appService" class="app.server.AppService">
+        <constructor-arg ref="userRepo"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="serviceName" value="App"/>
+        <property name="service" ref="appService"/>
+        <property name="serviceInterface" value="app.services.IAppServices"/>
+        <property name="registryPort" value="1099"/>
+    </bean>
+
+</beans>

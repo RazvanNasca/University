@@ -1,0 +1,30 @@
+31 Mar 2021 13:59:59,927 INFO  RepoBuyerDB 23 <init> - Initializing RepoBuyerDB with properties: {jdbc.url=jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Lab\Lab2-Home\ProiectC#\Lab2CSharp\Lab2CSharp\bin\Debug\festival.repository.db}
+31 Mar 2021 13:59:59,936 INFO  RepoShowDB 22 <init> - Initializing RepoShowDB with properties: {jdbc.url=jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Lab\Lab2-Home\ProiectC#\Lab2CSharp\Lab2CSharp\bin\Debug\festival.repository.db}
+31 Mar 2021 13:59:59,937 INFO  RepoUserDB 25 <init> - Initializing RepoUserDB with properties: {jdbc.url=jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Lab\Lab2-Home\ProiectC#\Lab2CSharp\Lab2CSharp\bin\Debug\festival.repository.db}
+31 Mar 2021 14:00:05,510 TRACE RepoUserDB 32 findOne - Enter
+31 Mar 2021 14:00:05,511 TRACE gui.Utils.JdbcUtils 48 getConnection - Enter
+31 Mar 2021 14:00:05,511 TRACE gui.Utils.JdbcUtils 25 getNewConnection - Enter
+31 Mar 2021 14:00:05,511 INFO  gui.Utils.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Lab\Lab2-Home\ProiectC#\Lab2CSharp\Lab2CSharp\bin\Debug\festival.repository.db
+31 Mar 2021 14:00:05,512 INFO  gui.Utils.JdbcUtils 31 getNewConnection - user: null
+31 Mar 2021 14:00:05,513 INFO  gui.Utils.JdbcUtils 32 getNewConnection - pass: null
+31 Mar 2021 14:00:05,679 TRACE gui.Utils.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@58cddf51)
+31 Mar 2021 14:00:05,690 TRACE RepoUserDB 53 findOne - Exit with(festival.model.User@4fa3b783)
+31 Mar 2021 14:00:05,806 INFO  RepoBuyerDB 23 <init> - Initializing RepoBuyerDB with properties: {jdbc.url=jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Lab\Lab2-Home\ProiectC#\Lab2CSharp\Lab2CSharp\bin\Debug\festival.repository.db}
+31 Mar 2021 14:00:05,807 INFO  RepoShowDB 22 <init> - Initializing RepoShowDB with properties: {jdbc.url=jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Lab\Lab2-Home\ProiectC#\Lab2CSharp\Lab2CSharp\bin\Debug\festival.repository.db}
+31 Mar 2021 14:00:05,807 INFO  RepoUserDB 25 <init> - Initializing RepoUserDB with properties: {jdbc.url=jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Lab\Lab2-Home\ProiectC#\Lab2CSharp\Lab2CSharp\bin\Debug\festival.repository.db}
+31 Mar 2021 14:00:05,807 TRACE RepoShowDB 60 findAll - Enter
+31 Mar 2021 14:00:05,807 TRACE gui.Utils.JdbcUtils 48 getConnection - Enter
+31 Mar 2021 14:00:05,808 TRACE gui.Utils.JdbcUtils 25 getNewConnection - Enter
+31 Mar 2021 14:00:05,808 INFO  gui.Utils.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Lab\Lab2-Home\ProiectC#\Lab2CSharp\Lab2CSharp\bin\Debug\festival.repository.db
+31 Mar 2021 14:00:05,808 INFO  gui.Utils.JdbcUtils 31 getNewConnection - user: null
+31 Mar 2021 14:00:05,808 INFO  gui.Utils.JdbcUtils 32 getNewConnection - pass: null
+31 Mar 2021 14:00:05,809 TRACE gui.Utils.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a1f2682)
+31 Mar 2021 14:00:05,819 TRACE RepoShowDB 88 findAll - Exit with([Name of artist: David, data: 2021-03-21T21:32, place: MainStange, remaining Tickets: 1493, Name of artist: Armin, data: 2017-03-20T05:40, place: Stage2, remaining Tickets: 520])
+31 Mar 2021 14:00:05,819 TRACE RepoShowDB 60 findAll - Enter
+31 Mar 2021 14:00:05,819 TRACE gui.Utils.JdbcUtils 48 getConnection - Enter
+31 Mar 2021 14:00:05,820 TRACE gui.Utils.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a1f2682)
+31 Mar 2021 14:00:05,820 TRACE RepoShowDB 88 findAll - Exit with([Name of artist: David, data: 2021-03-21T21:32, place: MainStange, remaining Tickets: 1493, Name of artist: Armin, data: 2017-03-20T05:40, place: Stage2, remaining Tickets: 520])
+31 Mar 2021 14:00:11,187 TRACE RepoShowDB 121 searchArtistByDate - Enter
+31 Mar 2021 14:00:11,187 TRACE gui.Utils.JdbcUtils 48 getConnection - Enter
+31 Mar 2021 14:00:11,187 TRACE gui.Utils.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a1f2682)
+31 Mar 2021 14:00:11,188 TRACE RepoShowDB 153 searchArtistByDate - Exit with([Name of artist: David, data: 2021-03-21T21:32, place: MainStange, remaining Tickets: 1493])

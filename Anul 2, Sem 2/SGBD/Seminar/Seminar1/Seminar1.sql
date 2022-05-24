@@ -1,0 +1,12 @@
+CREATE DATABASE Seminar1225SGBD;
+GO
+USE Seminar1225SGBD;
+CREATE TABLE Caini
+(	cod_c INT PRIMARY KEY IDENTITY,
+	nume VARCHAR(100),
+	rasa VARCHAR(100),
+	data_nasterii DATE,
+	stapan VARCHAR(100)
+);
+
+SELECT * FROM Caini

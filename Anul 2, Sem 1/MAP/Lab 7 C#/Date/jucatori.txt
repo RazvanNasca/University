@@ -1,0 +1,60 @@
+﻿1,Cornel Vulcanizare,Liceul Teoretic ELF,2,Miami Heat
+2,Mihai Instalatorul,Liceul Teoretic ELF,2,Miami Heat
+3,Constantin Biciclete,Liceul Teoretic ELF,2,Miami Heat
+4,Vasilica Centrala,Liceul Teoretic ELF,2,Miami Heat
+5,Camelia Perdele,Liceul Teoretic ELF,2,Miami Heat
+6,Marcel Benzinarie,Liceul Teoretic ELF,2,Miami Heat
+7,Traian Shaormerie,Liceul Teoretic ELF,2,Miami Heat
+8,Cristian Portofele,Liceul Teoretic ELF,2,Miami Heat
+9,Ion Adidasi,Liceul Teoretic ELF,2,Miami Heat
+10,Catalin Tractoare,Liceul Teoretic ELF,2,Miami Heat
+11,Maricica Termopane,Liceul Teoretic ELF,2,Miami Heat
+12,Lucretia Coafor,Liceul Teoretic ELF,2,Miami Heat
+13,Florin Mecanicul,Liceul Teoretic ELF,2,Miami Heat
+14,Gheorgita Excavator,Liceul Teoretic ELF,2,Miami Heat
+15,George Enescu,Liceul Teoretic ELF,2,Miami Heat
+16,Catalin Goia,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+17,Alex Velea,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+18,Connect-R,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+19,Smiley,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+20,Antonia,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+21,Puya,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+22,Camelia,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+23,George Hora,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+24,Uzzy,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+25,Tataie,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+26,Caddy,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+27,Ian,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+28,Azteca,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+29,Nane,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+30,Cheloo,Scoala Gimnaziala "Ioan Bob",1,Chicago Bulls
+31,Leo Messi,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+32,Cristiano Ronaldo,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+33,Iker Casillas,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+34,Sergio Ramos,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+35,Andreas Iniesta,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+36,Neymar Messi,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+37,Florinel Coman,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+38,Ciprian Tatarusanu Messi,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+39,Raul Rusescu,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+40,Lewandowski Messi,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+41,Gica Hagi,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+42,Marius Lacatus,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+43,Ilie Balaci,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+44,Gica Popescu,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+45,Helmut Duckadam,Liceul Teoretic "Gheorghe Sincai",3,Orlando Magic
+46,Naruto Uzumaki,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+47,Sasuke Uchiha,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+48,Itachi Uchiha,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+49,Kakashi Hatake,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+50,Might Guy,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+51,Shikamaru Nara,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+52,Sakura Haruno,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+53,Ino Yamanaka,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+54,Hinata Hyuga,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+55,Neji Hyuga,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+56,Rock Lee,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+57,Minato Namikaze,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+58,Jiraiya,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+59,Orochimaru,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs
+60,Hashirama Senju,Liceul Teoretic "Nicolae Balcescu",4,San Antonio Spurs

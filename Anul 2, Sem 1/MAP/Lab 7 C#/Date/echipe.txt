@@ -1,0 +1,4 @@
+﻿1,Chicago Bulls
+2,Miami Heat
+3,Orlando Magic
+4,San Antonio Spurs

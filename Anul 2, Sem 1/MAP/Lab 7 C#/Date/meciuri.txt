@@ -1,0 +1,7 @@
+﻿1,1,Chicago Bulls,2,Miami Heat,12/10/2015
+2,3,Orlando Magic,4,San Antonio Spurs,10/5/2020
+3,2,Miami Heat,4,San Antonio Spurs,25/5/2017
+4,3,Orlando Magic,4,San Antonio Spurs,15/12/2018
+5,4,San Antonio Spurs,2,Miami Heat,14/1/2019
+6,3,Orlando Magic,1,Chicago Bulls,14/1/2021
+7,3,Orlando Magic,2,Miami Heat,4/1/2021

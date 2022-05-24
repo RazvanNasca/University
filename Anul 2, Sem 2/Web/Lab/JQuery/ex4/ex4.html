@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <style>
+                th {
+                  cursor: pointer;
+                }
+                
+                th, td {
+                  text-align: left;
+                  padding: 16px;
+                }
+        </style>
+    </head>
+    <body>
+        <table id="table1">
+          <tr>
+            <th onclick="sortTableOrizontal(0)">Fructe</th>
+            <th onclick="sortTableOrizontal(1)">Pret</th>
+            <th onclick="sortTableOrizontal(2)">Cantitate</th>
+          </tr>
+          <tr>
+            <td>Mere</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+           <td>Pere</td>
+            <td>5</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Nuci</td>
+            <td>9</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Banane</td>
+            <td>3</td>
+            <td>1</td>
+          </tr>
+        </table>
+        
+        <table id="table2">
+          <tr>
+            <th onclick="sortTableVertical(0)">Fructe</th>
+            <td>Mere</td>
+            <td>Pere</td>
+            <td>Nuci</td>
+            <td>Banane</td>
+          </tr>
+          <tr>
+            <th onclick="sortTableVertical(1)">Pret</th>
+            <td>2</td>
+            <td>5</td>
+            <td>9</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th onclick="sortTableVertical(2)">Cantitate</th>
+            <td>1</td>
+            <td>7</td>
+            <td>3</td>
+            <td>1</td>
+          </tr>
+        </table> 
+        
+    </body>
+</html>

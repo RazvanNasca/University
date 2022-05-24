@@ -1,0 +1,45 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+*{
+    margin: 0;
+}
+
+h1{
+    background: red;
+    height:100px;
+    display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+#main{
+    background-color: green;
+    height: 70%;
+    display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+ul{
+    background-color: yellow;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    border: 1px solid black;
+}
+
+li{
+    padding: 10px;
+    border-right: 1px solid black;
+}
+
+footer{
+    background-color: pink;
+    height: 100px;
+    display: flex;
+	justify-content: left;
+	align-items: center;
+}

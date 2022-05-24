@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+    </head>
+    <body>
+        
+        <select  name="list1" id="list1" size="5">
+          <option value="Element 1">Element 1</option>
+          <option value="Element 2">Element 2</option>
+          <option value="Element 3">Element 3</option>
+          <option value="Element 4">Element 4</option>
+        </select>
+        
+        <select name="list2" id="list2" size="5">
+          <option value="Element 5">Element 5</option>
+          <option value="Element 6">Element 6</option>
+          <option value="Element 7">Element 7</option>
+          <option value="Element 8">Element 8</option>
+        </select>
+        
+        <script>
+			$('#list1').dblclick(function() { return $('#list1 option:selected').remove().appendTo('#list2'); });
+			$('#list2').dblclick(function() { return $('#list2 option:selected').remove().appendTo('#list1'); });
+		</script>
+        
+    </body>
+</html>

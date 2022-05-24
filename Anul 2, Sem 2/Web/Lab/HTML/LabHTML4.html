@@ -1,0 +1,189 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Comandă online</title>
+  
+  </head>
+  
+  <body>
+
+    <h1>Formular comandă online <img src="COMANDA-ONLINA1.jpg" width="100" height="50" alt="Poza comanda online"></h1>
+    
+    <table bgcolor="d4ebfa">
+          <tr>
+              <th colspan="6">Date personale</th>
+          </tr>
+          <tr>
+              <td>Nume</td>
+              <td> <input type="text" id="nume" name="nume"> </td>
+              <td colspan="2">Prenume</td>
+              <td colspan="2"> <input type="text" id="prenume" name="prenume" size="32"> </td>
+          </tr>
+          <tr>
+              <td>Email</td>
+              <td> <input type="text" id="email" name="email"> </td>
+              <td colspan="2">Nr. tel.</td>
+              <td colspan="2"> <input type="text" id="tel" name="tel" size="32"> </td>
+          </tr>
+          <tr>
+              <td>Adresă</td>
+              <td colspan="3"> <input type="text" id="adresa" name="adresa" size="52" maxlength="200"> </td>
+              <td>Țară</td>
+              <td><input type="text" id="tara" name="tara" value="România" readonly></td>
+          </tr>
+          <tr>
+              <td>Oraș</td>
+              <td> <input type="text" id="oras" name="oras"> </td>
+              <td>Județ</td>
+              <td>
+                  <select id="judetNume" name="judetNume" multiple>
+                      <option> CJ </option>
+                      <option selected> BN </option>
+                      <option> MM </option>
+                      <option> SM </option>
+                      <option> MS </option>
+                      <option> BH </option>
+                  </select>
+              </td>
+              <td>Cod poștal</td>
+              <td> <input type="text" id="codPostal" name="codPostal"> </td>
+          </tr>
+          <tr>
+              <td>Sex</td>
+              <td>
+                  <input type="radio" id="masculin" value="masculin" name="sex">
+                  <label for="masculin">M</label>
+                  <input type="radio" id="feminin" value="feminin" name="sex" checked>
+                  <label for="feminin">F</label>
+              </td>
+              <td>CNP</td>
+              <td> <input type="text" id="cnp" name="cnp"> </td>
+              <td>Seria</td>
+              <td> <input type="text" id="serie" name="serie"> </td>
+          </tr>
+    </table>
+    <table bgcolor="d4ebfa">
+          <tr>
+              <th colspan="6">Detalii comandă</th>
+          </tr>
+          <tr>
+              <td rowspan="2">Facturare</td>
+              <td colspan="5">
+                  <input type="radio" id="persFizica" value="persFizica" name="facturare">
+                  <label for="persFizica">Persoană fizică</label>
+                  <input type="radio" id="firma" value="firma" name="facturare" >
+                  <label for="firma">Firmă</label>
+              </td>
+          </tr>
+          <tr>
+              <td colspan="5">
+                  <input type="radio" id="cash" value="cash" name="plata">
+                  <label for="cash">Cash</label>
+                  <input type="radio" id="card" value="card" name="plata" >
+                  <label for="card">Card</label>
+              </td>
+          </tr>
+          <tr>
+              <td>*Detalii card</td>
+              <td>CVV</td>
+              <td> <input type="text" id="cvv" name="cvv"> </td>
+              <td>Număr card</td>
+              <td colspan="2"> <input type="text" id="nrCard" name="nrCard" size="32" > </td>
+          </tr>
+          <tr>
+              <th colspan="6">**Observații curier</th>
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <input type="checkbox" id="fragil" name="fragil" value="fragil">
+                  <label for="fragil">Fragil</label>
+              </td>
+              <td colspan="2">
+                  <input type="checkbox" id="urgent" name="urgent" value="urgent">
+                  <label for="urgent">Urgent</label>
+              </td>
+              <td colspan="2">
+                  <input type="checkbox" id="retur" name="retur" value="retur" disabled>
+                  <label for="retur">Retur gratuit</label>
+              </td>
+          </tr>
+    </table>
+    <table bgcolor="d4ebfa">
+          <tr>
+              <th colspan="6">Produse comandate</th>
+          </tr>
+          <tr>
+            <td>
+                <table>
+                    <tr>
+                        <th>Componentă</th>
+                        <th>Specificații</th>
+                        <th>Cantitate</th>
+                    </tr>
+                    <tr>
+                        <td>Monitor</td>
+                        <td>
+                          <ol type="1">
+                            <li>Dimensiune
+                              <ol type="I">
+                                  <li>1920cm</li>
+                                  <li>1080cm</li>
+                              </ol>
+                            </li>
+                            <li>Pixeli
+                              <ol type="I" start="3">
+                                  <li>200000</li>
+                                  <li>16.000 culori</li>
+                              </ol>
+                            </li>
+                          </ol>
+                        </td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>Mouse</td>
+                      <td>Cu 4 lumini</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>Tastatură</td>
+                      <td>Mecanică</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Unitate centrală</td>
+                        <td>
+                          <ol type="1">
+                            <li>RAM
+                              <ol type="A">
+                                  <li>8GB</li>
+                                  <li>8GB</li>
+                                  <li>16GB</li>
+                              </ol>
+                            </li>
+                            <li>Placă video</li>
+                            <li>Placă grafică</li>
+                          </ol>
+                        </td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </td>
+          </tr>
+    </table>
+    <h2>Vizitează-ne <a href="https://altex.ro/" target="_self">site-ul</a></h2>
+    <textarea rows="4" cols="30">
+        Ne rezervăm toate drepturile pentru procesarea datelor personale din acest formular!
+    </textarea>
+    <fieldset>
+      <legend>Observații</legend>
+      <label>* : Se completează doar dacă se selecteaza plata cu cardul</label>
+      <br><br>
+      <label>** : Se percep taxe suplimentare</label>
+    </fieldset>
+    
+  </body>
+</html>

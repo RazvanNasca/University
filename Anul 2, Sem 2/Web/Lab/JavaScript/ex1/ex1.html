@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Tab1ToTab2() {
+                var list1 = document.getElementById("list1");
+                var list2 = document.getElementById("list2");
+                var elem = list1.selectedIndex;
+                var option = document.createElement("option");
+                option.text = list1[elem].value;
+                list2.add(option);
+                list1.remove(elem);
+              }
+              
+            function Tab2ToTab1() {
+                var list1 = document.getElementById("list1");
+                var list2 = document.getElementById("list2");
+                var elem = list2.selectedIndex;
+                var option = document.createElement("option");
+                option.text = list2[elem].value;
+                list1.add(option);
+                list2.remove(elem);
+              }
+        </script>
+    </head>
+    <body>
+        
+        <select ondblclick="Tab1ToTab2()"  name="list1" id="list1" size="5">
+          <option value="Element 1">Element 1</option>
+          <option value="Element 2">Element 2</option>
+          <option value="Element 3">Element 3</option>
+          <option value="Element 4">Element 4</option>
+        </select>
+        
+        <select ondblclick="Tab2ToTab1()" name="list1" id="list2" size="5">
+          <option value="Element 5">Element 5</option>
+          <option value="Element 6">Element 6</option>
+          <option value="Element 7">Element 7</option>
+          <option value="Element 8">Element 8</option>
+        </select>
+    </body>
+</html>

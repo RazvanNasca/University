@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+}
+
+h1{
+    background: red;
+    height: 20%;
+    display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+#main{
+    background-color: green;
+    height: 60%;
+    width: 90%;
+    display: flex;
+	justify-content: left;
+	align-items: center;
+    display: inline-block;
+}
+
+ul{
+    background-color: yellow;
+    list-style-type: none;
+    float: left;
+    height: 60%;
+    width: 10%;
+    padding: 0;
+}
+
+li{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+footer{
+    background-color: pink;
+    height: 20%;
+    display: flex;
+	justify-content: left;
+	align-items: center;
+}

@@ -1,0 +1,119 @@
+ul{
+    list-style-type: none;
+    display: table;
+}
+
+li{
+    height: 83px;
+    display: table-cell;
+}
+
+#facebook{
+    background: url("sprite.png") 0 -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#facebook:hover{
+    background: url("sprite.png") 0 0;
+}
+
+#dot2{
+    background: url("sprite.png") -84px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#dot2:hover{
+    background: url("sprite.png") -84px 0;
+}
+
+#dribbble{
+    background: url("sprite.png") -168px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#dribbble:hover{
+    background: url("sprite.png") -168px 0;
+}
+
+#google{
+    background: url("sprite.png") -252px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#google:hover{
+    background: url("sprite.png") -252px 0;
+}
+
+#linkin{
+    background: url("sprite.png") -336px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#linkin:hover{
+    background: url("sprite.png") -336px 0;
+}
+
+#pinteless{
+    background: url("sprite.png") -420px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#pinteless:hover{
+    background: url("sprite.png") -420px 0;
+}
+
+#rss{
+    background: url("sprite.png") -504px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#rss:hover{
+    background: url("sprite.png") -504px 0;
+}
+
+#skype{
+    background: url("sprite.png") -588px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#skype:hover{
+    background: url("sprite.png") -588px 0;
+}
+
+#twitter{
+    background: url("sprite.png") -672px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#twitter:hover{
+    background: url("sprite.png") -672px 0;
+}
+
+#vimeo{
+    background: url("sprite.png") -756px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#vimeo:hover{
+    background: url("sprite.png") -756px 0;
+}
+
+#youtube{
+    background: url("sprite.png") -840px -84px;
+    left: 0px;
+    width: 84px;
+}
+
+#youtube:hover{
+    background: url("sprite.png") -840px 0;
+}

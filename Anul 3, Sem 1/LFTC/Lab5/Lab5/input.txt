@@ -1,0 +1,6 @@
+S->AB
+A->Ca
+B->aB
+B->b
+B->#
+C->Ba

@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std ;
+int main()
+{
+int 2raza ;
+cin >> raza ;
+double 2pi = -001 ;
+cout << pi * raza * raza ;
+cout << 2 * pi * raza ;
+}

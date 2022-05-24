@@ -1,0 +1,15 @@
+. in fata unui neterminal - se copiaza regulile sale de productie
+daca . nu e la capat se aplica goto - trece . peste un element si avem o sageata peste fiecare elem peste care poate trece punctul
+
+tabelul LR(0)
+	- prima linie pentru terminale si neterminale (fara S')
+	- o coloana pt actiune - la shift punem goto
+	- o coloana pt stari (I0..)
+	- reducerea e daca . se afla la final - ne uitam care sunt reg de productie si punem nr regulii
+la fiecare cate o singura actiune - nu avem conflicte
+
+$0 - configuratia initiala
+in jurul primei virgule - in stanga e un istoric, si in dreapta e ceea ce intra
+	ne uitam in varful istoricului - in ce stare suntem (ce avem in fata primei virgule)
+	ne uitam in tabel pentru actiunea I0 (avem 0 inainte de virgula) - daca e shift ne uitam in coloana coresp la ce avem dupa virgula (primul caract) - ne uitam in coloana lui a si avem I3 - inseamna ca avem shift -> a se muta in fata virgulei si dupa a se pune unde am ajuns (3)
+	reducere - tot membrul drept al regulii 3 se inlocuieste cu membrul stang si in loc de epsilon punem numarul reducerii, in ordine inversa (punem la stanga)

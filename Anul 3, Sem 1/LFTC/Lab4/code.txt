@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+int raza;
+cin>>raza;
+double pi = 3;
+cout<< pi*raza*raza;
+cout<< 2*pi*raza;
+int a=5;
+a = a+7;
+cout<< a;
+do{
+a=a+1;
+}
+while(a < 19);
+
+repeta {
+a=a+1;
+}
+panacand (a) sfrepeta
+
+}

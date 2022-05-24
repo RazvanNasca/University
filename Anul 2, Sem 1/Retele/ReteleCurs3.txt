@@ -1,0 +1,14 @@
+* Daca vor sa se cinecteze 2 clienti, al 2-lea asteapta dupa primul, nu se executa accept-ul
+* Cand primul client este servit, atunci este servit si al 2-lea
+* Daca elimina bucla while nu poate sa se conecteze mai mult de 1 client => al 2-lea client primeste o suma random
+
+* listen(s,5) -> face sa poate sa astepte 5 clienti
+
+
+* netstat -e -> toate conexiunile 
+* ping www.scs.ubbcluj,ro -> verifica daca merge serverul de la facultate + adresa ip
+
+* strace -> system trace 
+* ltrace -> library trace
+
+* sa nu conectezi un client la serverul de pe VM ul server personal

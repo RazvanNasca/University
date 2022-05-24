@@ -1,0 +1,40 @@
+Retele cu topologie Bass -> toate calculatoarele erau conect la un singur sistem de transmisie
+			 -> viteze mici, 10MB/s
+			 -> daca A vrea sa trimita la B, se propaga pe intreaga lungime de transimie, se ocupa latime de banda => existau coliziuni si se injumatatea latimea de banda daca aveam si conexiunea de la C la D
+			 -> daca se rupea cablul(mediul de transmisie) => nu mai putea sa conumice nimeni
+
+Retele u topologie Stea(HUB sau mai nou SWITCH), au porturi multiplu de 8; SOHO(small office and home); 
+					       -> conecta toate calculatoarele la un HUB
+					       -> avantaj: daca se rupea un fir de transmisie, restul retelei mergea in continuare
+					       -> se patreaza ideea de injumatatire a vitezei, termenul de difuzare a retelei
+					       -> diferenta HUB - SWITCH: vizual si functional sunt la fel, dar S este un echipament smart, adica are un procesor si memorie => poate sa ruleze si sa implementeze tot fel de logici functionale + isi numerota porturile si invata ce calculator e in spatele fiecarui port
+					       -> in stiva TSPIP, SWITCH opereaza la nivelul DataLink (fiecare calculator are o adresa Mac/Ethernet/Han..:(( )
+					       -> fiecare "pachet"/STONC trimisa are o adresa sursa si adresa destinatie (Mac lui A si Mac lui B) -> structura asta se cheama FRAME
+					       -> pachet -> de la Rtea in sus; FRAME -> de la DataLink in jos
+					       -> calculatoarele decid daca pachetele au Mac-ul lor sau nu, daca e pentru el ii dechide, decide repede deoarece citeste header-ul
+					       -> a doua oara cand A trimite la B atunci ii trimite direct deoarece stie exact unde este B
+					       -> SWITCH -urile (100MB/s) evita coliziunile, in HUB nu 
+					       -> routerele de azi au viteze de ordinul GB
+
+Retele cu topologie cu Stea Extinsa -> in loc de calculatoare sunt SWITCH -uri --- un SWITCH central --- se pot conecta calculatorare/servere, porturi externe, imprimante, proiector
+				    -> UPLINK = linia sau portul din switch care face legatura cu exteriorul
+				    -> 24MB/s e viteza maxima teoretica
+				    -> LAN (Local Area Network)
+				    -> capabilitatile SWITCH -ului
+				    -> SWITCH cu Management -> se pot configura ca un anumit port sa mearga la o anumita viteza sau sa faci disable la un port
+				    -> SWITCH -ul principal vede ce se afla in spatele fiecarui port; Ex: in portul 1 se regaseste A si B si C...
+				-> MAN = Metropolitan Area Network
+				-> WAN = Wide Area Network
+				-> INTERNET = retea de retele
+
+FF:FF:FF:FF:FF:FF -> Mac de podcast, daca vreau sa comunic cu toate pachetele din retelele locale
+
+ Protocoalele ARP si RARP(inlocuit de DHCP)
+
+* abstract: doi oameni care comunica
+* Mai jos: 2 browsere sau 2 oameni are vorbesc pe skype
+* Stiva TSPIP: 2 procese
+* Mai jos:
+* Si mai jos: adresele Mac
+
+Fiecare calculator o sa ajunga sa invete perechi de tipul (IP, MAC)

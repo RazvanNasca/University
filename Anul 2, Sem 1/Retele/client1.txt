@@ -1,0 +1,47 @@
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <stdio.h>
+#include <netinet/in.h>
+#include <netinet/ip.h>
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  int c;
+  struct sockaddr_in server;
+  uint16_t nr, port, cnt = 0;;
+
+  c = socket(AF_INET, SOCK_STREAM, 0);
+  if (c < 0) {
+    printf("Eroare la crearea socketului client\n");
+    return 1;
+  }
+
+  memset(&server, 0, sizeof(server));
+  server.sin_port = htons(atoi(argv[1]));
+  server.sin_family = AF_INET;
+  server.sin_addr.s_addr = inet_addr(argv[2]);
+
+  if (connect(c, (struct sockaddr *) &server, sizeof(server)) < 0) {
+    printf("Eroare la conectarea la server\n");
+    return 1;
+  }
+
+  printf("Numarul:  ");
+  scanf("%hu", &nr);
+  printf("Portul = ");
+  scanf("%hu", &port);
+
+  nr = htons(nr);
+  port = htons(port);
+
+  send(c, &nr, sizeof(nr), 0);
+  send(c, &port, sizeof(port), 0);
+
+  recv(c, &cnt, sizeof(cnt), 0);
+  cnt = ntohs(cnt);
+  nr = ntohs(nr);
+
+  printf("Numarul %hu are %hu divizori\n", nr, cnt);
+  close(c);
+}

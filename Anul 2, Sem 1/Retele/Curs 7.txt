@@ -1,0 +1,21 @@
+De la nivel data-link, orice vine de mai sus e informatie utila, la care se adauga antet
+- la nivel aplicatie, acolo se adauga niste antete ce tin de protocol
+- la nivel transport, se adauga port sursa, port destinatie, un check
+- la nivel retea, se adauga ip sursa, destinatie
+=> la fiecare pas se adauga efectiv niste pachete in plus
+
+RARP
+-> util in situatia in care se stie adresa MAC
+-> nu se stie adresa IP, e nevoie sa se afle in functie de adresa MAC
+-> nu se mai foloseste
+-> a fost inlocuit de DHCP (Dynamic Host Configuration Protocol)
+-> traducea adresa MAC in adresa IP, si cam atat
+-> a fost inlocuit pt ca DHCP poate sa ofere mai multe setari de configurare pe care sa
+le obtina calculatorul care trimite request-ul
+-> ca sa functioneze netul corect, trebui sa fie configurate niste setari minimale la calculator:
+	- IP
+	- Netmask (subnet mask)
+	- Default gateway (GW)
+	- DNS (adresa IP a cel putin unui server DNS)
+
+!!!! Serverul DHCP trebuie sa aiba adresa IP configurata si setata manual

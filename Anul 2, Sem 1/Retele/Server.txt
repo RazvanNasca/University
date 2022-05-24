@@ -1,0 +1,82 @@
+      #include <sys/types.h>
+      #include <sys/socket.h>
+      #include <stdio.h>
+      #include <netinet/in.h>
+      #include <netinet/ip.h>
+      #include <string.h>
+
+      #define BUFF 100
+
+      char ipAnterior[BUFF];
+      uint16_t portAnterior = 0;
+      char caracterAnterior[2];
+
+      int main(int argc, char** argv)
+      {
+              int s;
+              struct sockaddr_in server, client;
+              int c, l, i;
+              uint16_t port;
+              char sir[BUFF];
+              char caracter[2];
+              int frecventa[256];
+
+              caracter[0] = '!';
+
+              s = socket(AF_INET, SOCK_DGRAM, 0);
+              if (s < 0)
+              {
+                      printf("Eroare la crearea socketului server\n");
+                      return 1;
+              }
+
+              memset(&server, 0, sizeof(server));
+              server.sin_port = htons(atoi(argv[1]));
+              server.sin_family = AF_INET;
+              server.sin_addr.s_addr = INADDR_ANY;
+
+              if (bind(s, (struct sockaddr *) &server, sizeof(server)) < 0)
+              {
+                      printf("Eroare la bind\n");
+                      return 1;
+              }
+
+              strcpy(ipAnterior, (char*)(inet_ntoa(server.sin_addr)));
+
+              l = sizeof(client);
+              memset(&client, 0, sizeof(client));
+
+              while(1)
+              {
+                      printf("S-a conectat un client cu IP-ul ", inet_ntoa(client.sin_addr));
+
+                      char adresaIP[BUFF];
+                      strcpy(adresaIP, (char*)(inet_ntoa(client.sin_addr)));
+
+                      recvfrom(s, sir, sizeof(sir), MSG_WAITALL, (struct sockaddr *) &client, &l);
+
+
+                      for (i = 0; i < 256; i++)
+                                frecventa[i] = 0;
+
+                      for (i = 0; i < strlen(sir); i++)
+                                frecventa[sir[i]]++;
+
+                      int max = 0;
+                      for (i = 0; i < 256; i++)
+                                if (frecventa[i] > max)
+                                {
+                                        max = frecventa[i];
+                                        caracter[0] = '0' + i;
+                                }
+
+                      sendto(s, caracterAnterior, sizeof(caracterAnterior), 0, (struct sockaddr *) &client, &l);
+                      sendto(s, ipAnterior, sizeof(ipAnterior), 0, (struct sockaddr *) &client, &l);
+                      sendto(s, &portAnterior, sizeof(portAnterior), 0, (struct sockaddr *) &client, &l);
+                      strcpy(ipAnterior, adresaIP);
+                      caracterAnterior[0] = caracter[0];
+                      portAnterior = client.sin_port;
+
+              }
+              close(s);
+      }

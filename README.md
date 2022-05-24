@@ -2,9 +2,13 @@
 
 Anul 1
   * Semestrul 1
+
     ~ Arhitectura Sistemelor de Calcul (ASC)
+    
     ~ Analiză Matematică
+    
     ~ Fundamentele Programării (FP)
+    
   * Semestrul 2
     ~ Geometrie
     ~ Grafuri

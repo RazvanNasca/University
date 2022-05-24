@@ -1,0 +1,14 @@
+inventory\model\Part.class
+inventory\model\Inventory.class
+inventory\model\OutsourcedPart.class
+inventory\controller\AddProductController.class
+inventory\controller\AddPartController.class
+inventory\controller\ModifyPartController.class
+inventory\repository\InventoryRepository.class
+inventory\Main.class
+inventory\model\InhousePart.class
+inventory\controller\ModifyProductController.class
+inventory\controller\MainScreenController.class
+inventory\model\Product.class
+inventory\service\InventoryService.class
+inventory\controller\Controller.class

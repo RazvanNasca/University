@@ -1,0 +1,19 @@
+*interfete functionale = este o interfata care contine doar o metod abstracta
+
+*functional programing = 
+
+*predicate = Predicatele sunt functii de un singur argument care intorc o valoare logica
+
+*function = functiile accepta un argument si returneaza o valoare
+
+*consumer = operatii efectuate pe un singur argument
+
+*supplier = Produc un rezultat de un anumit tip generic. Spre deosebire de functii, nu admit nici un argument.
+
+*comparator = este o interfata functionala, astfel este asignata pentru o expresie lambda sau o referinta
+
+*filter = operatie intermediar ă returnează fluxul în sine)
+
+*map = operatie intermediară convertește fiecare elem din stream într-un alt obiect (conform unei funcții
+
+*reduce = operație finală , determină o reducere a elem. stream lui. Poate avea două argumente (un elem neutru și o expresie lambda). Returnează un Optional dacă specificarea elem neutru lipsește).

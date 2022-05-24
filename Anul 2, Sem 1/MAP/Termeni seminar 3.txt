@@ -1,0 +1,9 @@
+1. list    - colectie ordonata in care se pot repeta elementele
+2. set     - este o colectie ce nu poate contine elemete duplicate
+3. map	   - asigneaza chei la valori, nu pot fi chei duplicate
+4. hashset - memoreaza elementele sale intr-o tabela de dispersie, implementarea cea mai performanta... nu se garanteaza parcurgerea in aceeasi ordine
+5. treeset - arbore rosu-negru, ordonate dupa valoare, implementare mai lenta
+6. hashmap -
+7. treemap - 
+8. hascode - returneaza valoare hash corespunzatoare unui obiect 
+9. equals - testează egalitatea conținutului a două obiecte

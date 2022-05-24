@@ -1,0 +1,6 @@
+lambda : * O functie lambda (funcţie anonimă) este o funcţie definită şi apelată fără a fi legată de un identificator.
+         * Funcţiile lambda sunt o formă de funcţii ,,încuibate” (nested functions) în sensul că permit accesul la variabilele din domeniul funcţiei în care sunt conţinute.
+	             
+put if absent (map) : * asociaza o cheie daca nu este data unei valori sau null
+optional: * Un container care retine o valoare sau nu retine nimic
+consumer: * este o operatie care acepta un singur input ca argument si nu returneaza rezultate. 

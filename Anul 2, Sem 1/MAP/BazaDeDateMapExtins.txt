@@ -1,0 +1,1 @@
+C:\Program Files\PostgreSQL\13\bin\pg_dump.exe --file "C:\\Users\\40752\\OneDrive\\DOCUME~1\\SOCIAL~1" --host "localhost" --port "5432" --username "postgres" --no-password --verbose --format=c --blobs "socialnetwork"

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="org.sqlite.JDBC"/>
+        <property name="url" value="jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Practic1\AppPersistence\src\main\resources\Joc.db" />
+    </bean>
+
+    <bean id="sessionFactory"
+              class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="annotatedClasses">
+            <list>
+                <value>app.model.Cuvant</value>
+                <value>app.model.User</value>
+                <value>app.model.Mana</value>
+                <value>app.model.Runda</value>
+                <value>app.model.Joc</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">app.persistence.org.hibernate.dialect.SQLiteDialect</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.archive.autodetection">class</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="userRepo" class="app.persistence.UserDBRepository">
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+
+    <bean id="carteRepo" class="app.persistence.CuvantDBRepository">
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+
+    <bean id="jocRepo" class="app.persistence.JocDBRepository">
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+
+    <bean id="rundaRepo" class="app.persistence.RundaDBRepository">
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+
+    <bean id="manaRepo" class="app.persistence.ManaDBRepository">
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+
+    <bean id="appService" class="app.server.AppService">
+        <constructor-arg ref="userRepo"/>
+        <constructor-arg ref="carteRepo"/>
+        <constructor-arg ref="jocRepo"/>
+        <constructor-arg ref="rundaRepo"/>
+        <constructor-arg ref="manaRepo"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="serviceName" value="App"/>
+        <property name="service" ref="appService"/>
+        <property name="serviceInterface" value="app.services.IAppServices"/>
+        <property name="registryPort" value="1099"/>
+    </bean>
+
+</beans>

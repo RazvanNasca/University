@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name = "hibernate.dialect">
+            app.persistence.org.hibernate.dialect.SQLiteDialect
+        </property>
+
+        <property name = "hibernate.connection.driver_class">
+            org.sqlite.JDBC
+        </property>
+
+        <property name="hibernate.connection.url">jdbc:sqlite:D:\Faculta\Anul 2, Sem 2\MPP\Practic1\AppPersistence\src\main\resources\Joc.db</property>
+        <property name="hibernate.archive.autodetection">class</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Echo all executed SQL to stdout -->
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- List of XML mapping files -->
+        <mapping class="app.model.Cuvant"/>
+        <mapping class="app.model.User"/>
+        <mapping class="app.model.Joc"/>
+        <mapping class="app.model.Mana"/>
+        <mapping class="app.model.ManaId"/>
+        <mapping class="app.model.Runda"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="247.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.client.gui.ClasamentController">
+    <children>
+        <VBox alignment="CENTER" prefHeight="398.0" prefWidth="271.0" spacing="10.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="76.0" prefWidth="371.0" text="Clasament" VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+            <TableView fx:id="tableClasament" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="columnUser" prefWidth="110.33331298828125" text="User" />
+                <TableColumn fx:id="columnNrCarti" minWidth="0.0" prefWidth="113.33333333333334" text="Punctaj" />
+              </columns>
+            </TableView>
+                <HBox alignment="CENTER" prefHeight="76.0" prefWidth="371.0" spacing="50.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button onAction="#handeClose" mnemonicParsing="false" text="Close">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

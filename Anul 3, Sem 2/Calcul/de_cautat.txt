@@ -1,0 +1,9 @@
+Lab1 -> Taylor, Rest, McLaurin
+Lab2 -> aritmetica in virgula flotanta, teoria erorilor
+Lab3 -> conditionarea unei probleme
+Lab4 -> sisteme de ecuatii liniare: metode directe
+Lab5 -> sisteme de ecuatii liniare: metode iterative: Jacobi si Gauss-Seidel
+Lab6 -> Interpolare Lagrange
+Lab7 -> Interpolare Hermite
+Lab8 -> Interpolare Spline
+Lab9 -> Metoda celor mai mici patrate

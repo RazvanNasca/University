@@ -1,0 +1,4 @@
+* o formula de cuadratura se numeste exacta pentru o functie daca restul este nul
+* 1, x^2, x^3, x^4
+
+TEMA: 1, 2, 3

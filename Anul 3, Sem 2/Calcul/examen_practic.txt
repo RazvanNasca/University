@@ -1,0 +1,7 @@
+30% lab
+20% practic -> open book, 1 problema, biletele (poti prinde teoretic sau practic)
+
+teoretic -> pe foaie
+practic -> implementare
+
+timp: 1h 40min

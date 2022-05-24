@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:properties id="propertiesPath" location="classpath:chatserver.properties"/>
+
+    <bean name="PROP" id="properties" class="java.util.Properties">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+
+    <bean id="buyerRepo" class="repository.db.RepoBuyerDB">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+    <bean id="userRepo" class="repository.db.RepoUserDB">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+    <bean id="showRepo" class="repository.db.RepoShowDB">
+        <constructor-arg ref="propertiesPath"/>
+    </bean>
+
+    <bean id="festivalService" class="festival.server.serviceFestival">
+        <constructor-arg ref="userRepo"/>
+        <constructor-arg ref="buyerRepo"/>
+        <constructor-arg ref="showRepo"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+
+        <property name="serviceName" value="Festival"/>
+        <property name="service" ref="festivalService"/>
+        <property name="serviceInterface" value="festival.services.IFestivalServices"/>
+        <property name="servicePort" value="1099"/>
+    </bean>
+
+</beans>

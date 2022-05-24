@@ -1,0 +1,120 @@
+#include <iostream>
+#include <cstring>
+#include <assert.h>
+#include <cmath>
+#include <vector>
+#include <map>
+
+using namespace std;
+
+/*
+    Exercitiul 1
+    Specificatii:
+    Date de intrare: sir - sir de caractere
+    Date de iesire: un sir de caractere care reprezinta cuvantul cel mai mare dpdv alfabetic
+*/
+char* ultimul(char* sir)
+{
+    char* cuvant = strtok(sir, " ");
+    char maxim[100];
+    strcpy(maxim, cuvant);
+
+    while(cuvant != NULL)
+    {
+        if(strcmp(maxim, cuvant) < 0)
+            strcpy(maxim, cuvant);
+
+        cuvant = strtok(NULL, " ");
+    }
+
+    return maxim;
+}
+
+/*
+    Exercitiul 2
+    Specificatii:
+    Date de intrare:    x1, y1 -> coordonatele primului punct, de tip double
+                        x2, y2 -> coordonatele al doilea punct, de tip double
+    Date de iesire:     distanta euclidiana dintre cele doua puncte, de tip double
+*/
+double distanta(double x1, double y1, double x2, double y2)
+{
+    return sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+}
+
+/*
+    Exercitiul 3
+    Specificatii:
+    Date de intrare:    v1 -> primul vector scalar
+                        v2 -> al doile vector scalar
+    Date de iesire:     produsul lor scalar
+*/
+int scalar(vector<int> v1, vector<int> v2)
+{
+    if(v1.size() != v2.size())
+        cout << "Vectorii au dimensiuni diferite";
+
+    int prod = 0;
+    for(int i = 0; i < v1.size(); i++)
+       prod += v1[i]*v2[i];
+
+    return prod;
+}
+
+/*
+    TO DO
+    Exertitiul 5
+*/
+char* singure(char* sir)
+{
+    map<char*, int> frecv;
+
+    char* cuvant = strtok(sir, " ");
+    frecv.insert(pair<char*, int>(cuvant, 1));
+    cuvant = strtok(NULL, " ");
+
+    while(cuvant != NULL)
+    {
+        if(frecv.find(cuvant) != frecv.end())
+        {
+            frecv.find(cuvant) -> second ++;
+            cout << 2;
+        }
+        else
+        {
+            frecv.insert(pair<char*, int>(cuvant, 1));
+            cout << 1;
+        }
+
+        cuvant = strtok(NULL, " ");
+    }
+
+    char rez[100] = " ";
+
+    for (map<char*, int>::iterator it = frecv.begin(); it != frecv.end(); it++) {
+        if(it -> second == 1)
+            {
+                cout << 3;
+                strcat(rez, " ");
+                strcat(rez, it -> first);
+            }
+    }
+
+    return rez;
+}
+
+int intrus(int v[], int n)
+{
+    int sum = 0, gauss = (n-1)*n/2;
+    for(int i = 1; i <= n; i++)
+        sum += v[i];
+
+    return sum - gauss;
+}
+
+int main()
+{
+    assert(false);
+
+    return 0;
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".cars.activities.AddActivity"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adauga masina"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        />
+
+    <EditText
+        android:id="@+id/idNrInmatriculare"
+        android:hint ="Numar Inmatriculare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/idModel"
+        android:hint ="Model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        ></EditText>
+
+    <AutoCompleteTextView
+        android:id="@+id/idCombustibil"
+        android:hint ="Combustibil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        ></AutoCompleteTextView>
+
+    <AutoCompleteTextView
+        android:id="@+id/idStare"
+        android:hint ="Stare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        ></AutoCompleteTextView>
+
+    <EditText
+        android:id="@+id/idPret"
+        android:hint ="Pret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        ></EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/addBttn"
+            android:text="Adaugare"
+            android:layout_marginStart="16dp"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

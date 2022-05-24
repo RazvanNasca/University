@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.*?>
+<GridPane alignment="center" hgap="10" minWidth="-Infinity" prefHeight="70.0" prefWidth="309.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints maxWidth="123.5" minWidth="10.0" prefWidth="47.0" />
+      <ColumnConstraints maxWidth="136.0" minWidth="10.0" prefWidth="104.0" />
+   </columnConstraints>
+   <children>
+      <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0" />
+      <ProgressIndicator fx:id="indicatorBar" accessibleRole="PAGINATION" prefHeight="30.0" prefWidth="38.0" progress="0.0" GridPane.columnIndex="1" />
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Cancel loading data" GridPane.columnIndex="2" />
+      <Label fx:id="labelStatus" prefHeight="17.0" prefWidth="101.0" GridPane.rowIndex="1" />
+   </children>
+</GridPane>

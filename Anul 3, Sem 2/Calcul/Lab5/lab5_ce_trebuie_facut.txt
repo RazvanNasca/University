@@ -1,0 +1,4 @@
+1, 2, 3, 4
+1 si 2 sunt OBLIGATORII
+
+matrice diagonal dominanta

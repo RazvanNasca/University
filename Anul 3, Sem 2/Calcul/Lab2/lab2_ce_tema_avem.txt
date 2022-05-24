@@ -1,0 +1,8 @@
+1 2 3 4 -> probleme tema
+
+1. cauti pe net
+
+2. 	- de pe lista cu problemele OBLIGATORII
+	- calculam pentru x=10pi si apoi dam valori tot mai mari si trebuie sa vedem ce se intampla
+
+3 si 4 sunt directe

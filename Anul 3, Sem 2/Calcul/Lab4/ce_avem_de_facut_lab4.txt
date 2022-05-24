@@ -1,0 +1,5 @@
+1, 2, 3, 4, 5
+
+ex3: nesingular == determinantul este diferit de zero
+
+ex5: instr diag in matlab

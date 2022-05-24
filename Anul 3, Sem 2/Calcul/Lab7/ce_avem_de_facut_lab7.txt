@@ -1,0 +1,16 @@
+1 2 3 -> teoretice
+1 2 3 -> practice
+
+Teoretice
+1. algoritm mai sus in document
+2. plot + exemple + noduri
+3. cubic = polinom de gradul 3
+
+Practice
+aplicam algoritmul de mai sus
+
+Hermite: nodurile, valorile fct in nod si valorile derivatei in nod
+
+3. timpul = nodurile
+   distanta = valorile functiei in fiecare nod
+   viteza = derivata ( pt ca viteza este derivata distantei in raport cu timpul)

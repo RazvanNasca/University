@@ -1,0 +1,25 @@
+5, 7, 8 -> Tema, sapt 3
+
+Explicatii probleme tema: (maple/sage)
+
+5. Cati termeni sunt necesari <=> deduceti n (asemanator cu ex. 2)
+   dezvoltare in jurul lui 0 ca sa ajungem la f(1) = ln2
+   x se plimba intre 0 si 1 -> mai usor pentru limite
+
+   la punctul b): reducem la formula (4) 
+
+7. a) Pe masura ce ne indepartam, polinoamele nu mai fac suprapunere 
+   - !dupa ce am rezolvat problema cu exponentiala, rezolvam si pt cos(x)
+
+8. Algoritm de implementat pas cu pas
+	- daca incepe indearea de la 0 e ok ... daca incepe de la 1...
+	- instructiunea sum (poate ajuta)
+a) implementare pentru sin(x) si cos(x);  m, k = 0,1,2,3
+b) plot (asemanator cu ex. 7)
+
+
+
+Folositi functia Tylor din maple
+	
+
+

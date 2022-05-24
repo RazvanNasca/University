@@ -1,0 +1,15 @@
+1 2 3 4 5 
+1 2 3 4
+
+
+1: 2 vectori ca si input
+2: plot pt ex 1
+3: alegem o functie (ex: sin/cos/orice inafara de polin)
+4: putem folosi functia de la 3
+5: ex de cod putin mai sus in document
+
+
+1: asemanator cu ex cu tantarii
+2: ultima formula din tabla
+3: trebuie noduri si valori in noduri ( sqrt(x) ), se aleg suficient de multe noduri apropiate ( sqrt(121) )
+4: gasim pe net -> este si in document 

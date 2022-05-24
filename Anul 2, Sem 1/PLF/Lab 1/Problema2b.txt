@@ -1,0 +1,14 @@
+2.b. Inserare elem dat dupa elem 1, 2, 4, 8,...
+
+Inserare(L: lista, elem: element, poz: pozitie, cnt: contor, R: lista):
+	* []							, daca n = 0 si cnt != poz
+	* [elem]						, daca n = 0 si cnt = poz
+	* l1 + elem + Inserare(l2l3..ln, elem, poz*2, cnt+1, R) , daca n > 0 si cnt == poz  
+	* Inserare(l2l3..ln, elem, poz, cnt+1, R)		, altfel
+
+2.a. cmmmc lista
+
+cmmmcLista(L: lista, R: integer):
+	* 0					, n = 0
+	* l1					, n = 1
+	* cmmmmcLista(cmmmdc(l1,l2)l3..ln, R) 	, altfel

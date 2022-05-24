@@ -1,0 +1,166 @@
+% 6.b)sa se elimine toate aparitiile elem maxim dintr o lista de numere
+% intregi
+
+% maxim(l1l2..ln, M) = l1 , n = 1 si l1 > M
+%                      maxim(l2l3..ln, l1), l1 > M
+%                      maxim(l2l3,,ln, M), altfel
+%
+% maxim(L : Lista, M : Intreg)
+% L - lista initiala in care cautam
+% M - maximul cu care comparam
+% model de flux: (i , i), (i, o)
+
+maxim([H], H).
+maxim([H|T], H) :- maxim(T, Rez),
+                   H >= Rez,
+                   !.
+maxim([_|T], M) :- maxim(T, M).
+
+% elimina(l1l2..ln, Elem) = [], n = 0
+%                           l1 (+) elimina(l2l3..ln, Elem), l1 != Elem
+%                           elimina(l2l3..ln, Elem), altfel
+% elimina(L : Lista, Elem : Intreg, Col : Lista)
+% L - lista initiala
+% Elem - elementul ce trebuie eleminat
+% Col - lista nou creata
+% model de flux: (i, i, o)
+
+elimina([], _, []).
+elimina([H|T], Elem, [H|Col]) :- H =\= Elem,
+                                 elimina(T, Elem, Col),
+                                 !.
+elimina([_|T], Elem, Col) :- elimina(T, Elem, Col).
+
+
+
+
+
+% 12.a) Sa se scrie un predicat care substituie intr o lista un element
+% prin altul
+% b) sa se constuiasca sublista (Lm,..,Ln) a unei lista (l1...lk)
+
+% subst(l1l2..ln, Elem1, Elem2) = [], n = 0,
+%                                 subst(Elem2l2..ln, Elem), l1 = Elem1
+%                                 subst(l2l3..ln, Elem), altfel
+%
+% subst(L: Lista, Elem1: Intreg, Elem2: Intreg, Col: Lista)
+% L - lista initiala
+% Elem1 - elementul care trebuie substituit
+% Elem2 - elementul cu care substituim
+% Col - lista rezultat finala
+% model de flux (i, i, i, o)
+
+subst([], _, _, []).
+subst([H|T], Elem1, Elem2, [Elem2|Col]) :- H =:= Elem1,
+                                         subst(T, Elem1, Elem2, Col),
+                                         !.
+subst([H|T], Elem1, Elem2, [H|Col]) :- subst(T, Elem1, Elem2, Col).
+
+
+% sublista(l1l2..lk, M, N) = [], k = 0,
+%                            l1 (+) sublista(l2l3..lk, M, N) , k>=M si
+%                                                              k<=N
+%                            sublista(l2l3..lk, M, N), altfel
+%
+% sublista(L: Lista, M: Intreg, N: Intreg, P: Intreg, Col: List)
+% L - lista initiala
+% M, N - capetele sublistei
+% P - pozitia curenta
+% Col - sublista formata
+% model de flux: (i, i, i, o)
+
+sublista([], _, _, _, []).
+sublista([H|T], M, N, P, [H|Col]) :- P >= M,
+                                     P =< N,
+                                     P1 is P+1,
+                                     sublista(T, M, N, P1, Col),
+                                     !.
+sublista([_|T], M, N, P, Col) :- P1 is P+1,
+                                 sublista(T, M, N, P1, Col).
+
+
+% 14.a) Sa se scrie un predicat care testeaza egalitatea a doua multimi
+%       fara sa se faca apel la diferenta a doua multimi.
+%    b) Definiti un predicat care selecteaza al n-lea element al unei
+%       liste.
+%
+
+exista(E, [E|_]) :- !.
+exista(E, [_|T]) :- exista(E, T).
+
+% egalitate(l1l2..ln, k1k2..km) = true, n = 0
+%                                 false,  exista(l1, k1k2,,km) = true
+%                                 exista(l2l3..ln, k1k2,,km), altfel
+%
+% egalitate(L: Lista, K: Lista)
+% L: prima lista
+% K: a doua lista
+% model de flux: (i,i)
+
+egalitate([], _).
+egalitate([H|_], K) :- not(exista(H, K)),
+                       !,
+                       false.
+egalitate([_|T], K) :- egalitate(T, K).
+
+
+% egalitate_main(L, K) :- not(egalitate(L, K)),
+%                        !,
+%                        false.
+% egalitate_main(L, K) :- not(egalitate(K, L)),
+%                        false.
+
+egalitate_main(L, K) :- egalitate(L, K),
+                        egalitate(K, L).
+
+
+% elementulN(l1l2..lm, N) = l1, n = 0
+%                           elementulN(l2l3..lm, N-1), altfel
+%
+% elementulN(L: Lista, N: Intreg, Elem: Intreg)
+% L: lista initiala
+% N: pozitia ceruta
+% Elem: elementul cautat
+% Model de flux: (i, i, o)
+
+elementulN([H|_], 1, H).
+elementulN([_|T], N, Elem) :- N1 is N - 1,
+                              elementulN(T, N1, Elem).
+
+
+% verificare daca o lista are aspect de munte
+% munte(l1l2..ln, F) = false, n <= 1 si f = 0
+%                      true, n <= 1 si f = 1
+%                      munte(l2l3..ln, 0), l1 < l2 si f = 0
+%                      munte(l2l3..ln, 1), l1 >= l2 si f = 0
+%                      munte(l2l3..ln, 1), l1 > l2 si f =1
+%                      false, altfel
+% munte(L: Lista, F: Intreg)
+% L: lista pe care o verificam
+% F: variabila care ne arata daca suntem pe partea crescatoare sau nu
+% model de flux: (i,i)
+
+munte([],1).
+munte([_], 1).
+munte([H1,H2|T], 0) :- H1 < H2,
+                       munte([H2|T], 0).
+munte([H1,H2|T], 0) :- H1 >= H2,
+                       munte([H2|T], 1).
+munte([H1,H2|T], 1) :- H1 > H2,
+                       munte([H2|T], 1).
+
+% munteMain(l1l2..ln) = false, n <= 2
+%                       false, l1 >= l2
+%                       munte(l1l2..ln, 0), altfel
+%
+% munteMain(L: Lista)
+% L: lista care trebuie verificata
+% model de flux: (i)
+
+munteMain([H1,H2|T]) :- H1 < H2,
+                        munte([H1,H2|T], 0).
+
+
+
+
+

@@ -1,0 +1,168 @@
+; Se consideră o listă neliniară. Să se scrie o funcţie LISP care să aibă ca rezultat lista iniţială 
+; în care toate apariţiile unui element e au fost înlocuite cu o valoare e1. Se va folosi o funcție MAP.
+; 
+; Model matematic: 
+; 
+; inlocuire(l, e1, e2) = 		[]	, n = 0
+;							    l 	, l != e1 si l e atom
+;							    e2	, l = e1 si l e atom
+;								inlocuire(l1, e1, e2) + inlocuire(l2, e1, e2) + ... + inlocuire(ln, e1, e2)	, altfel l = l1l2..ln
+(defun inlocuire (lis e1 e2)
+	(cond 
+		((null lis) nil)
+		((and (atom lis) (not (eq lis e1))) lis)
+		((and (atom lis) (eq lis e1)) e2)
+		(t (mapcar #'(lambda (lista)
+						(inlocuire lista e1 e2)
+					  ) lis
+			)
+		)
+	)
+)
+
+
+; Dându-se o listă neliniară conținând atât atomi numerici, cât și nenumerici, se cere un program LISP care să construiască o listă
+; liniară formată doar din acei atomi nenumerici care apar de un număr par de ori în lista inițială.
+;
+; Model matematic:
+; 
+;
+; apare(elem, l1l2..ln) =   0										, n = 0
+;							1 + apare(elem, l2l3..ln)				, l1 = elem si l1 - atom
+;							apare(elem, l2l3..ln)					, l1 != elem si l1 - atom
+;							apare(elem, l1) + apare(elem, l2l3..ln)	, altfel
+;
+; nenum(l1l2..ln) = []							, n = 0
+;					nenum(l1) + nume(l2l3..ln) 	, l1 lista
+;					l1 + nenum(l2l3..ln)		, l1 atom nenumeric
+;					nenum(l2l3..ln)				, altfel
+;
+; multime(l1l2..ln, lInit, rez) = rez										, n	= 0
+;							 	  multime(l2l3..ln, lInit, l1 + rez)		, apare(l1, lInit) % 2 = 0 si apare(l1, rez) = 0
+;								  multime(l2l3..ln, lInit, rez)				, altfel
+
+(defun multime_aux (lista)
+	(multime (nenum lista) (nenum lista) ())
+)
+
+(defun multime (lista lInit rez)
+	(cond
+		((null lista) rez)
+		((and (eq (apare (car lista) rez) 0) (eq (mod (apare (car lista) lInit) 2) 0)) (multime (cdr lista) lInit (append (list (car lista)) rez)))
+		(t (multime (cdr lista) lInit rez))
+	)
+)
+
+(defun nenum (lis)
+	(cond 
+		((null lis) nil)
+		((listp (car lis)) (append (nenum (car lis)) (nenum (cdr lis))))
+		((not(numberp (car lis))) (cons (car lis) (nenum (cdr lis))))
+		(t(nenum (cdr lis)))
+	)
+)
+
+(defun apare (elem lista)
+	(cond 
+		((null lista) 0)
+		((and (atom (car lista)) (eq (car lista) elem)) (+ 1 (apare elem (cdr lista))))
+		((and (atom (car lista)) (not (eq (car lista) elem))) (apare elem (cdr lista)))
+		(t (listp (car lista)) (+ (apare elem (car lista)) (apare elem (cdr lista))))
+	)
+)
+
+
+; Să se substituie un element e prin altul e1 la orice nivel impar al unei liste neliniare. 
+; Nivelul superficial se consideră 1. De exemplu, pentru lista (1 d (2 d (d))), e =d şi e1 =f rezultă lista (1 f (2 d (f))).
+;
+; Model matematic:
+;
+; substituie(l, nivel, e1, e2) = [] 		, n = 0 
+;						 		 e2			, l atom, l = e1 si nivel % 2 = 1
+;								 l			, l atom, nivel % 2 = 0
+;							     substituie(l1, nivel+1, e1, e2)+...+substituie(ln, nivel+1, e1, e2)  	, altfel, l = l1l2..ln
+
+(defun substituie (lista nivel e1 e2)
+	(cond
+		((null lista) nil)
+		((and (atom lista) (eq (mod nivel 2) 0)) lista)
+		((and (and (atom lista) (eq lista e1)) (eq (mod nivel 2) 1)) e2)
+		(t (mapcar #'(lambda (lis) 
+						(substituie lis (+ nivel 1) e1 e2)
+					 ) lista
+			)
+		)
+	)
+)
+
+(defun substituie_aux (lista e1 e2)
+	(substituie lista 0 e1 e2)
+)
+
+
+; Un arbore n-ar se reprezintă în LISP astfel (nod subarbore1 subarbore2 .....). 
+; Se cere să se verifice dacă un nod x apare pe un nivel par în arbore. Nivelul rădăcinii se consideră a fi 0.
+; Exemplu pentru arborele (a (b (g)) (c (d (e)) (f))): a) x =g => T; b) x=h => NIL
+;
+; Model matematic:
+;	
+; verificare(l, elem, nivel) = 	false						, n = 0
+;								true						, l - atom, nivel % 2 = 0 si l = e1
+;								verificare(l1, elem, nivel+1)+..+verificare(ln, elem, nivel+1), altfel, l = l1l2..ln 
+
+(defun verificare (lista elem nivel)
+	(cond
+		((null lista) nil)
+		((and (and (atom lista) (eq lista elem)) (eq (mod nivel 2) 0)) t)
+		(t (mapcar #'(lambda (lis)
+						(verificare lis elem (+ nivel 1))
+					 )lista
+			)
+		)
+	)
+)
+
+
+
+; cauta(l1l2..ln, elem) =  	false 									, n = 0
+;							true 									, l1 - atom si l1 = elem
+;							cauta(l2..ln, elem)						, l1 -atom si l1 != elem
+;							cauta(l1, elem) or cauta(l2..ln, elem) 	, altfel
+
+(defun cauta(lista elem)
+	(cond
+		((null lista) nil)
+		((and (atom (car lista)) (eq (car lista) elem)) t)
+		((and (atom (car lista)) (not (eq (car lista) elem))) (cauta (cdr lista) elem))
+		(t (or (cauta (car lista) elem) (cauta (cdr lista) elem)))
+	)
+)
+
+; drum(l, elem) = 	[] 							, n = 0
+;					l1 + drum(l2..ln, elem)		, cauta(l1l2..ln, elem) = True
+;
+;
+
+(defun drum (lista elem)
+	(cond
+		((null lista) nil)
+		((and (atom lista) (eq lista elem)) (list elem))
+		((and (atom lista) (not(eq lista elem))) (drum (cdr lista) elem))
+		((eq (cauta (car lista) elem) t) (apply #'append(mapcar #'(lambda (lis)
+																	(drum lis elem)	 
+																  )lista
+														)
+										  )
+		)
+		(t (drum (cdr lista) elem))
+	)
+)
+
+
+
+
+
+
+
+
+
